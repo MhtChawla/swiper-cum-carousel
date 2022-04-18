@@ -58,4 +58,4 @@ disableNextButton //Both button will be shown but Next Button won't work
 
 animate //state is to 'faded' & fading animation will be applied (works good with autoplay,pagination click or button click)
 
-items={1.5} //give it a number {2},{3},{4} etc & carousel will be automatically enabled (giving it {1.2},{1.5},{2.5} shows some portion/percentage of view accordingly) - [many props might not work good when using this prop since it changes swiper to carousel]
+items //give it a number {2},{3},{4} etc & carousel will be automatically enabled (giving it {1.2},{1.5},{2.5} shows some portion/percentage of view accordingly) - [many props might not work good when using this prop since it changes swiper to carousel]
