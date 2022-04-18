@@ -10,15 +10,14 @@ Swiper made for react native, basically a wrapper to wrap your components/childr
 
 'npm i swiper-cum-carousel --save'
 
-# Import
-
-import { SwiperCumCarousel } from 'SwiperCumCarousel'
-
 # Use
 
+import { SwiperCumCarousel } from 'SwiperCumCarousel'
+..
 <SwiperCumCarousel>
- ..
+..two or more children
 </SwiperCumCarousel>
+..
 
 # Props
 
