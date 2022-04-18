@@ -7,12 +7,15 @@ Swiper Wrapper to wrap your components/children inside & use it as a slider/slid
 'npm i swiper-cum-carousel --save'
 
 # Use
+
 ...
 import {SwiperCumCarousel} from 'SwiperCumCarousel'
+
 ...
 <SwiperCumCarousel>
  ...// 1st children 
  ...// 2nd children
  .. //and more children if rqd.
 </SwiperCumCarousel>
+
 ...
