@@ -12,7 +12,6 @@ Swiper made for react native, basically a wrapper to wrap your components/childr
 
 # Use
 
-<<<<<<< HEAD
 import {SwiperCumCarousel} from 'SwiperCumCarousel'
 ..
 <SwiperCumCarousel>
