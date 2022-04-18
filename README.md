@@ -15,7 +15,7 @@ import {SwiperCumCarousel} from 'SwiperCumCarousel'
 <SwiperCumCarousel>
  ...// 1st children 
  ...// 2nd children
- .. //and more children if rqd.
+ .. //and more children if rq.
 </SwiperCumCarousel>
 
 ...
