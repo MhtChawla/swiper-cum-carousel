@@ -1,6 +1,6 @@
 # React Native swiper-cum-carousel
 
-Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components/images/cards.
+## Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components/images/cards.
 
 <div>
   <div style={{flexDirection:'row',alignItems:'center',justifyContent:'center',flex:1}}>
