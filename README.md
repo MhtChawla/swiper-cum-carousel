@@ -3,15 +3,13 @@
 Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components/images/cards.
 
 <div>
-  <div style={{flexDirection:'row'}}>
+  <div style={{flexDirection:'row',justifyContent:'center'}}>
     <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif" width="250" />
-   <div >
     <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCards.gif" width="250" />
-    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCardsWithPagingEnabled.gif" width="250" />
-   </div>
     <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/Autoplay.gif" width="250" />
   </div>
   <div style={{flexDirection:'row'}}>
+    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCardsWithPagingEnabled.gif" width="250" />
     <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FadingAnimation.gif" width="250" />
     <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/PaginationSwipe.gif" width="250" />
     <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/ButtonSwipe.gif" width="250" />
