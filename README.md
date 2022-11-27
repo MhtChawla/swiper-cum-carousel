@@ -2,7 +2,7 @@
 
 Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components/images/cards.
 
-<img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif" width="200" />
+<img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif" width="250" />
 
 ![Swiper](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif) 
 <!-- ![Carousel](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCards.gif)
