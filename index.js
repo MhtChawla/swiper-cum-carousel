@@ -118,7 +118,7 @@ const SwiperCumCarousel = (props) => {
 
     return (
         <View style={{ flex: 1, width: ScreenWidth }} >
-            {renderTitle && <Text style={{ margin: 5, fontSize: 20, color: 'red', alignSelf: 'center', fontWeight: 'bold', fontFamily: 'urbanist', textTransform: 'uppercase', ...titleStyle }}> {renderTitle} </Text>}
+            {renderTitle && <Text style={{ margin: 5, fontSize: 20, color: 'red', alignSelf: 'center', fontWeight: 'bold', textTransform: 'uppercase', ...titleStyle }}> {renderTitle} </Text>}
             {showsIndex &&
                 <Text style={{ color: 'black', alignSelf: 'center', ...indexStyle }}>{currentIndex}/{size}</Text>}
             <View style={{ flex: 1, width: ScreenWidth }}>
