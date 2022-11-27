@@ -14,7 +14,9 @@ or </br>
 
 # Use
 
+```sh
 import SwiperCumCarousel from 'swiper-cum-carousel'
+```
 
 ```sh
 <SwiperCumCarousel>
