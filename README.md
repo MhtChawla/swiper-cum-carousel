@@ -1,15 +1,15 @@
-# What is this?
+# React Native swiper-cum-carousel
 
-Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for React Native app components.
+Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for React Native app components/images/cards.
 
 # Important
 
-Swiper made for react native, basically a wrapper to wrap your components/children inside & use it as a slider/slideshow/swiper. It can also be used as carousel displaying multiple components in single view at a time. Thus, 2 in 1 pre-made swiper for ease in React Native.
+Swiper made for react native, basically a wrapper to wrap your components/children inside & use it as a slider/slideshow/swiper, e.g. best for onboarding screens. It can also be used as carousel displaying multiple components in single view at a time, e.g. best for product cards of flipkart/ecommerce.Thus, 2 in 1 pre-made swiper for ease in React Native.
 
 # Installation
 
 ```npm i swiper-cum-carousel``` </br>
-or <br>
+or </br>
 ```yarn add swiper-cum-carousel```
 
 # Use
