@@ -3,8 +3,14 @@
 Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components/images/cards.
 
 <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif" width="250" />
+<img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCards.gif" width="250" />
+<img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/Autoplay.gif" width="250" />
+<img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/ButtonSwipe.gif" width="250" />
+<img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCardsWithPagingEnabled.gif" width="250" />
+<img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FadingAnimation.gif" width="250" />
+<img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/PaginationSwipe.gif" width="250" />
 
-![Swiper](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif) 
+<!-- ![Swiper](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif)  -->
 <!-- ![Carousel](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCards.gif)
 ![Autoplay](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/Autoplay.gif)
 ![ButtonSwipe](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/ButtonSwipe.gif)
