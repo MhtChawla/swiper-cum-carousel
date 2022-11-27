@@ -1,6 +1,6 @@
 {
   "name": "swiper-cum-carousel",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Adds Swiper wrapper around your components(two or more) of react native to make it slideshow, slider or swiper. Can also be used as carousel to display multiple components in one view at a time. Basic example of SwiperCumCarousel can be used on onboarding pages when used as swiper & can be used on ecommerce website displaying multiple products in small views when used as carousel.",
   "main": "index.js",
   "scripts": {
