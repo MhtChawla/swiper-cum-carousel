@@ -8,8 +8,8 @@ Swiper made for react native, basically a wrapper to wrap your components/childr
 
 # Installation
 
-```npm i swiper-cum-carousel``` \n
-or \n
+```npm i swiper-cum-carousel``` </br>
+or <br>
 ```yarn add swiper-cum-carousel```
 
 # Use
