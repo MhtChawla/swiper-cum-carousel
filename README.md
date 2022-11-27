@@ -1,6 +1,31 @@
 # React Native swiper-cum-carousel
 
-Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components/images/cards.
+### Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components/images/cards.
+
+<div>
+  <div style={{flexDirection:'row',alignItems:'center',justifyContent:'center',flex:1}}>
+    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif" width="300" />
+    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCards.gif" width="500" />
+  </div>
+   <div>
+    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FadingAnimation.gif" width="250" />
+    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/PaginationSwipe.gif" width="250" />
+    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/ButtonSwipe.gif" width="250" />
+  </div>
+  <div style={{flexDirection:'row'}}>
+    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/Autoplay.gif" width="250" />
+    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCardsWithPagingEnabled.gif" width="350" />
+  </div>
+</div>
+
+<!-- ![Swiper](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif)  -->
+<!-- ![Carousel](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCards.gif)
+![Autoplay](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/Autoplay.gif)
+![ButtonSwipe](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/ButtonSwipe.gif)
+![CarouselCards](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCardsWithPagingEnabled.gif)
+![FadingAnimation](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FadingAnimation.gif)
+![PaginationSwipe](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/PaginationSwipe.gif) -->
+
 
 # Important
 
