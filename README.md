@@ -5,7 +5,7 @@
 <div>
   <div style={{flexDirection:'row',alignItems:'center',justifyContent:'center',flex:1}}>
     <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif" width="300" />
-    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCards.gif" width="400" />
+    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCards.gif" width="500" />
   </div>
    <div>
     <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FadingAnimation.gif" width="250" />
