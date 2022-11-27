@@ -5,7 +5,7 @@ Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper 
 <div>
   <div style={{flexDirection:'row',alignItems:'center'}}>
     <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif" width="300" />
-    <img style={{alignSelf:'flex-start'}} src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCards.gif" width="350" />
+    <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCards.gif" width="400" />
   </div>
    <div>
     <img src="https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FadingAnimation.gif" width="250" />
