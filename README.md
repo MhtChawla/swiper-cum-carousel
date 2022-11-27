@@ -1,6 +1,6 @@
 # React Native swiper-cum-carousel
 
-Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for React Native app components/images/cards.
+Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components/images/cards.
 
 # Important
 
