@@ -90,7 +90,7 @@ import SwiperCumCarousel from 'swiper-cum-carousel'
 </tr>
 <tr>
 <td>buttonLeftText</td>
-<td>give it text to change left button label</td>
+<td>give your button title (or component) to change left button label</td>
 </tr>
 <tr>
 <td>buttonGroupStyle</td>
@@ -102,7 +102,7 @@ import SwiperCumCarousel from 'swiper-cum-carousel'
 </tr>
 <tr>
 <td>buttonRightText</td>
-<td>give it text to change right button label</td>
+<td>give your button title (or component) to change right button label</td>
 </tr>
 <tr>
 <td>buttonLeftStyle</td>
