@@ -62,7 +62,7 @@ const SwiperCumCarousel = (props) => {
         showsPagination,
         showsButtons,
         style,
-        pagingEnabled,
+        pagingEnabled=true,
         disablePrevButton,
         disableNextButton } = props;
 
@@ -127,7 +127,7 @@ const SwiperCumCarousel = (props) => {
                     onScroll={ScrollEvent} horizontal={true}
                     showsHorizontalScrollIndicator={showsScrollBar ? showsScrollBar : false}
                     showsVerticalScrollIndicator={showsScrollBar ? showsScrollBar : false}
-                    persistentScrollbar={true} pagingEnabled={pagingEnabled ? pagingEnabled : true} ref={scroll}>
+                    persistentScrollbar={true} pagingEnabled={pagingEnabled} ref={scroll}>
                     {children.map((item, i) => {
                         return (
                             animate == 'faded' ?
