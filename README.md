@@ -1,5 +1,5 @@
 # React Native Swiper & Carousel
-![license](https://img.shields.io/badge/Licensed-ISC-success) ![npm](https://img.shields.io/badge/npm-swiper--cum--carousel-blue) ![stack](https://img.shields.io/badge/stack-react--native-important)
+![license](https://img.shields.io/badge/Licensed-ISC-success) ![npm](https://img.shields.io/badge/npm-v1.10.0-blue) ![stack](https://img.shields.io/badge/stack-react--native-important)
 ## (swiper-cum-carousel)
 
 ### Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components, images or cards.
