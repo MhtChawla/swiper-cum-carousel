@@ -2,8 +2,8 @@
 ![stack](https://img.shields.io/badge/tech-react%20native-critical) ![license](https://img.shields.io/badge/Licensed-ISC-blue) 
 ## (swiper-cum-carousel)
 
+### Converts any set of components into one swiper.
 Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components/images/cards.
-### Converts any set of components/cards/images into one slider or swiper.
 
 # Important
 
