@@ -5,6 +5,10 @@
 ### CONVERTS ANY SET OF COMPONENTS INTO ONE SWIPER
 Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components/images/cards.
 
+# Important
+
+Swiper made for react native, basically a wrapper to wrap your components/children inside & use it as a slider/slideshow/swiper, e.g. best for onboarding screens. It can also be used as carousel displaying multiple components in single view at a time, e.g. best for product cards of flipkart/ecommerce.Thus, 2 in 1 pre-made swiper for ease in React Native. (examples on git repo)
+
 <div>
   <div style={{flexDirection:'row',alignItems:'center',justifyContent:'center',flex:1}}>
     <img src="https://github.com/MhtChawla/glimpse-of-mywork/blob/main/swiper-cum-carousel/FingerSwipe.gif" width="300" />
@@ -18,19 +22,6 @@ Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper 
     <img src="https://github.com/MhtChawla/glimpse-of-mywork/blob/main/swiper-cum-carousel/CarouselCardsWithPagingEnabled.gif" width="350" />
   </div>
 </div>
-
-<!-- ![Swiper](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FingerSwipe.gif)  -->
-<!-- ![Carousel](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCards.gif)
-![Autoplay](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/Autoplay.gif)
-![ButtonSwipe](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/ButtonSwipe.gif)
-![CarouselCards](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/CarouselCardsWithPagingEnabled.gif)
-![FadingAnimation](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/FadingAnimation.gif)
-![PaginationSwipe](https://github.com/MhtChawla/swiper-cum-carousel/blob/master/examples/PaginationSwipe.gif) -->
-
-
-# Important
-
-Swiper made for react native, basically a wrapper to wrap your components/children inside & use it as a slider/slideshow/swiper, e.g. best for onboarding screens. It can also be used as carousel displaying multiple components in single view at a time, e.g. best for product cards of flipkart/ecommerce.Thus, 2 in 1 pre-made swiper for ease in React Native. (examples on git repo)
 
 # Installation
 1. ```npm i swiper-cum-carousel``` </br>
