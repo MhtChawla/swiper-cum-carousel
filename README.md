@@ -8,7 +8,7 @@
 
 Basically, ```<SwiperCumCarousel>``` for React Native is a wrapper to wrap around your components/children & convert it into a slider / slideshow/ swiper, (e.g. best for onboarding screens). </br>
 It can also be used as Carousel displaying multiple components in single view at a time, (e.g. product cards of flipkart/ecommerce). </br>
-Thus, 2 in 1 premade swiper cum carousel for ease in React Native. (examples below)
+Thus, 2 in 1 premade ```swiper-cum-carousel``` for ease of any swipe in React Native. (examples below)
 
 <div>
   <div style={{flexDirection:'row',alignItems:'center',justifyContent:'center',flex:1}}>
