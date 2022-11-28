@@ -1,4 +1,4 @@
-# Swiper/Carousel for React Native 
+# React Native Swiper as well as Carousel
 ![license](https://img.shields.io/badge/Licensed-ISC-success) ![npm](https://img.shields.io/badge/npm-swiper--cum--carousel-blue) ![stack](https://img.shields.io/badge/stack-react--native-important)
 ## (swiper-cum-carousel)
 
