@@ -44,6 +44,7 @@ import SwiperCumCarousel from 'swiper-cum-carousel'
 ```
 
 # Props
+(```items``` prop to make carousel active)
 
 <table>
 <tbody>
