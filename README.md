@@ -1,4 +1,4 @@
-# React Native swiper-cum-carousel
+# React Native Swiper & Carousel - a wrapper around your components fo react native
 ![license](https://img.shields.io/badge/Licensed-ISC-success) ![npm](https://img.shields.io/badge/npm-v1.10.0-blue) ![stack](https://img.shields.io/badge/stack-react--native-important)
 ## (swiper-cum-carousel)
 
