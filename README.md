@@ -153,7 +153,7 @@ import SwiperCumCarousel from 'swiper-cum-carousel'
 </tr>
 <tr>
 <td>items</td>
-<td> <p style="font-weight:bold">Enables Carousel</p> give it a number {2},{3},{4} etc & carousel will be automatically enabled (giving it {1.2},{1.5},{2.5} shows some portion/percentage of view accordingly) - [many props might not work good when using this prop since it changes swiper to carousel]</td>
+<td> <p style="font-weight:bold; font-style:italic">Enables Carousel</p> give it a number {2},{3},{4} etc & carousel will be automatically enabled (giving it {1.2},{1.5},{2.5} shows some portion/percentage of view accordingly) - [many props might not work good when using this prop since it changes swiper to carousel]</td>
 </tr>
 </tbody>
 </table>
