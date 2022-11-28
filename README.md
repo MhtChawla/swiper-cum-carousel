@@ -3,7 +3,7 @@
 ## (swiper-cum-carousel)
 
 Flexible, lightweight and fully customizable Swiper as well as Carousel wrapper for your React Native app components/images/cards.
-Converts any set of components/cards/images into one slider or swiper.
+### Converts any set of components/cards/images into one slider or swiper.
 
 # Important
 
