@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/mohit-aiemployee/swiper-cum-carousel log --oneline -10)",
+      "Bash(./node_modules/.bin/tsc)"
+    ]
+  }
+}

@@ -17,15 +17,15 @@ interface SwiperCumCarouselProps {
     renderTitle?: string,
     titleStyle?: TextStyle,
     indexStyle?: TextStyle,
-    buttonLeftText?: string,
-    buttonRightText?: string,
+    buttonLeftText?: ReactNode,
+    buttonRightText?: ReactNode,
     buttonLeftStyle?: StyleProp<ViewStyle>,
     buttonRightStyle?: StyleProp<ViewStyle>,
     renderNextButtonOnly?: boolean,
     pagingNavigation?: boolean,
     autoPlay?: boolean,
     autoPlayDuration?: number,
-    buttonStyle?: StyleProp<ViewStyle> | TextStyle,
+    buttonStyle?: StyleProp<ViewStyle>,
     buttonGroupStyle?: StyleProp<ViewStyle>,
     w?: number,
     loop?: boolean,
@@ -51,6 +51,16 @@ interface FadeAnimatedComponentProps {
     style?: StyleProp<ViewStyle>
 }
 
+const debounce = (func: () => void, timeout = 50) => {
+    let timer: ReturnType<typeof setTimeout>;
+    return () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            func();
+        }, timeout);
+    };
+};
+
 const FadeAnimatedComponent = ({
     item,
     selected,
@@ -75,10 +85,13 @@ const FadeAnimatedComponent = ({
             useNativeDriver: true
         }).start();
     };
+
     useEffect(() => {
         if (selected) {
             fadeIn();
-        } else if (!selected) fadeOut();
+        } else {
+            fadeOut();
+        }
     }, [selected]);
 
     return (
@@ -88,9 +101,6 @@ const FadeAnimatedComponent = ({
                 flex: 1,
                 backgroundColor: 'white',
                 alignItems: 'center',
-                // @ts-ignore
-                scrollSnapAlign: 'start',
-                transition: '0.6s ease',
                 opacity: fadeAnim,
                 width: ScreenWidth,
             }, style]}
@@ -136,37 +146,24 @@ const SwiperCumCarousel = (props: SwiperCumCarouselProps) => {
     const scroll = React.useRef<ScrollView | null>(null);
     const [currentIndex, setIndex] = useState(1);
 
-    const debounce = (func: () => void, timeout = 50) => {
-        let timer: ReturnType<typeof setTimeout>;
-        return (...args: any[]) => {
-            clearTimeout(timer);
-            timer = setTimeout(() => {
-                func.apply(this, args as any);
-            }, timeout);
-        };
-    };
-
-    const f1 = () => {
-        if (currentIndex < size) {
+    const scrollToNext = useRef(() => {
+        setIndex(prev => {
+            const next = prev < size ? prev : 1;
             scroll.current?.scrollTo({
-                x: currentIndex * ScreenWidth,
+                x: (next < size ? next : 0) * ScreenWidth,
                 animated: animate !== 'faded'
             });
-        } else if (currentIndex === size) {
-            scroll.current?.scrollTo({
-                x: 0,
-                animated: animate !== 'faded'
-            });
-        }
-    };
+            return next < size ? next + 1 : 1;
+        });
+    });
 
-    const autoPlayFunc = debounce(f1, autoPlayDuration || 2000);
+    const autoPlayDebounced = useRef(debounce(scrollToNext.current, autoPlayDuration || 2000));
 
     useEffect(() => {
         if (autoPlay) {
-            autoPlayFunc();
+            autoPlayDebounced.current();
         }
-    }, [currentIndex, autoPlay, autoPlayFunc]);
+    }, [currentIndex, autoPlay]);
 
     const ScrollEvent = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
         const px =
@@ -175,40 +172,39 @@ const SwiperCumCarousel = (props: SwiperCumCarouselProps) => {
     };
 
     const clickHandler = (num: number) => {
-        currentIndex >= 1 && currentIndex <= size
-            ? num == 1 && currentIndex < size
-                ? scroll.current?.scrollTo({
+        if (currentIndex >= 1 && currentIndex <= size) {
+            if (num === 1 && currentIndex < size) {
+                scroll.current?.scrollTo({
                     x: currentIndex * ScreenWidth,
-                    animated: animate == 'faded' ? false : true
-                })
-                : num == -1 && currentIndex > 1
-                    ? scroll.current?.scrollTo({
-                        x: ScreenWidth * (currentIndex - 2),
-                        animated: animate == 'faded' ? false : true
-                    })
-                    : null
-            : null;
+                    animated: animate !== 'faded'
+                });
+            } else if (num === -1 && currentIndex > 1) {
+                scroll.current?.scrollTo({
+                    x: ScreenWidth * (currentIndex - 2),
+                    animated: animate !== 'faded'
+                });
+            }
+        }
 
-        loop
-            ? num == 1 && currentIndex == size
-                ? scroll.current?.scrollTo({
+        if (loop) {
+            if (num === 1 && currentIndex === size) {
+                scroll.current?.scrollTo({
                     x: 0,
-                    animated: animate == 'faded' ? false : true
-                })
-                : num == -1 && currentIndex == 1
-                    ? scroll.current?.scrollTo({
-                        x: (size - 1) * ScreenWidth,
-                        animated: animate == 'faded' ? false : true
-                    })
-                    : null
-            : null;
+                    animated: animate !== 'faded'
+                });
+            } else if (num === -1 && currentIndex === 1) {
+                scroll.current?.scrollTo({
+                    x: (size - 1) * ScreenWidth,
+                    animated: animate !== 'faded'
+                });
+            }
+        }
     };
 
     const paginationScroll = (index: number) => {
-        console.log(index);
-        console.log(currentIndex);
-        // pagingNavigation &&
-        scroll.current?.scrollTo({ x: index * ScreenWidth, animated: true });
+        if (pagingNavigation) {
+            scroll.current?.scrollTo({ x: index * ScreenWidth, animated: true });
+        }
     };
 
     return (
@@ -231,69 +227,57 @@ const SwiperCumCarousel = (props: SwiperCumCarouselProps) => {
                     {renderTitle} {' '}
                 </Text>
             )}
-            {
-                showsIndex && (
-                    <Text
-                        style={
-                            {
-                                color: 'black',
-                                alignSelf: 'center',
-                                ...indexStyle
-                            }
-                        }
-                    >
-                        {currentIndex} / {size}
-                    </Text>
-                )
-            }
-            <View style={{ flex: 1, width: ScreenWidth }}>
-                <ScrollView
+            {showsIndex && (
+                <Text
                     style={
                         {
-                            flex: 1,
-                            // @ts-ignore
-                            scrollBehavior: animate == 'faded' ? null : 'smooth'
+                            color: 'black',
+                            alignSelf: 'center',
+                            ...indexStyle
                         }
                     }
+                >
+                    {currentIndex} / {size}
+                </Text>
+            )}
+            <View style={{ flex: 1, width: ScreenWidth }}>
+                <ScrollView
+                    style={{ flex: 1 }}
                     onScroll={ScrollEvent}
                     horizontal={true}
-                    showsHorizontalScrollIndicator={
-                        showsScrollBar ? showsScrollBar : false
-                    }
-                    showsVerticalScrollIndicator={
-                        showsScrollBar ? showsScrollBar : false
-                    }
+                    showsHorizontalScrollIndicator={showsScrollBar ?? false}
+                    showsVerticalScrollIndicator={showsScrollBar ?? false}
                     persistentScrollbar={true}
                     pagingEnabled={pagingEnabled}
                     ref={scroll}
                 >
-                    {
-                        children.map((item, i) => {
-                            return animate == 'faded' ? (
-                                <FadeAnimatedComponent
-                                    index={i}
-                                    item={item}
-                                    selected={currentIndex === i + 1}
-                                    ScreenWidth={ScreenWidth}
-                                    style={style}
-                                />
-                            ) : (
-                                <View
-                                    key={i}
-                                    style={[{
-                                        flex: 1,
-                                        alignItems: 'center',
-                                        backgroundColor: 'white',
-                                        opacity: 1,
-                                        width: ScreenWidth / (items ? items : 1),
-                                    }, style]}
-                                >
-                                    {item}
-                                </View>
-                            );
-                        })}
+                    {children.map((item, i) => {
+                        return animate === 'faded' ? (
+                            <FadeAnimatedComponent
+                                key={i}
+                                index={i}
+                                item={item}
+                                selected={currentIndex === i + 1}
+                                ScreenWidth={ScreenWidth}
+                                style={style}
+                            />
+                        ) : (
+                            <View
+                                key={i}
+                                style={[{
+                                    flex: 1,
+                                    alignItems: 'center',
+                                    backgroundColor: 'white',
+                                    opacity: 1,
+                                    width: ScreenWidth / (items ? items : 1),
+                                }, style]}
+                            >
+                                {item}
+                            </View>
+                        );
+                    })}
                 </ScrollView>
-            </View >
+            </View>
 
             {showsPagination && (
                 <View style={{ alignItems: 'center' }}>
@@ -303,20 +287,15 @@ const SwiperCumCarousel = (props: SwiperCumCarouselProps) => {
                                 <View
                                     key={index}
                                     style={{
-                                        opacity:
-                                            index + 1 == currentIndex ? 1 : 0.4,
+                                        opacity: index + 1 === currentIndex ? 1 : 0.4,
                                         flexDirection: 'row',
                                         margin: 5,
                                         alignSelf: 'center'
-                                    }
-                                    }
+                                    }}
                                 >
                                     <TouchableOpacity
-                                        activeOpacity={
-                                            !pagingNavigation ? 1 : 0.2
-                                        }
-                                        onPress={() => paginationScroll(index)
-                                        }
+                                        activeOpacity={pagingNavigation ? 0.2 : 1}
+                                        onPress={() => paginationScroll(index)}
                                         style={{
                                             width: 10,
                                             height: 10,
@@ -328,79 +307,29 @@ const SwiperCumCarousel = (props: SwiperCumCarouselProps) => {
                             );
                         })}
                     </View>
-                </View >
+                </View>
             )}
 
-            {
-                showsButtons && (
-                    <View
-                        style={
-                            [{
-                                flexDirection: 'row',
-                                alignSelf: 'center',
-                                margin: 20,
-                            }, buttonGroupStyle]
-                        }
-                    >
-                        {!renderNextButtonOnly ? (
-                            <TouchableOpacity
-                                disabled={
-                                    !loop &&
-                                        (disablePrevButton || currentIndex) == 1
-                                        ? true
-                                        : false
-                                }
-                                onPress={() => clickHandler(-1)}
-                                style={[{
-                                    alignSelf: 'center',
-                                    backgroundColor: 'red',
-                                    padding: 15,
-                                    borderRadius: 10,
-                                    opacity:
-                                        !loop &&
-                                            (disablePrevButton || currentIndex == 1)
-                                            ? 0.4
-                                            : 1,
-                                }, buttonStyle, buttonLeftStyle
-                                ]}
-                                activeOpacity={0.6}
-                            >
-                                <Text
-                                    style={
-                                        {
-                                            textAlign: 'center',
-                                            fontSize: 20,
-                                            color: 'white',
-                                            ...buttonTextStyle
-                                        }
-                                    }
-                                >
-                                    {buttonLeftText ? buttonLeftText : 'BACK'}
-                                </Text>
-                            </TouchableOpacity>
-                        ) : null}
-
-                        <View style={{ margin: 10 }} />
-
+            {showsButtons && (
+                <View
+                    style={[{
+                        flexDirection: 'row',
+                        alignSelf: 'center',
+                        margin: 20,
+                    }, buttonGroupStyle]}
+                >
+                    {!renderNextButtonOnly ? (
                         <TouchableOpacity
-                            onPress={() => clickHandler(+1)}
+                            disabled={!loop && (disablePrevButton || currentIndex === 1)}
+                            onPress={() => clickHandler(-1)}
                             style={[{
                                 alignSelf: 'center',
                                 backgroundColor: 'red',
                                 padding: 15,
                                 borderRadius: 10,
-                                opacity:
-                                    !loop &&
-                                        (disableNextButton || currentIndex == size)
-                                        ? 0.4
-                                        : 1,
-                            }, buttonStyle, buttonRightStyle]}
+                                opacity: !loop && (disablePrevButton || currentIndex === 1) ? 0.4 : 1,
+                            }, buttonStyle, buttonLeftStyle]}
                             activeOpacity={0.6}
-                            disabled={
-                                !loop && (disableNextButton || currentIndex == size)
-                                    ? true
-                                    : false
-                            }
                         >
                             <Text
                                 style={
@@ -412,11 +341,40 @@ const SwiperCumCarousel = (props: SwiperCumCarouselProps) => {
                                     }
                                 }
                             >
-                                {buttonRightText ? buttonRightText : 'NEXT'}
+                                {buttonLeftText ?? 'BACK'}
                             </Text>
                         </TouchableOpacity>
-                    </View>
-                )}
+                    ) : null}
+
+                    <View style={{ margin: 10 }} />
+
+                    <TouchableOpacity
+                        onPress={() => clickHandler(+1)}
+                        style={[{
+                            alignSelf: 'center',
+                            backgroundColor: 'red',
+                            padding: 15,
+                            borderRadius: 10,
+                            opacity: !loop && (disableNextButton || currentIndex === size) ? 0.4 : 1,
+                        }, buttonStyle, buttonRightStyle]}
+                        activeOpacity={0.6}
+                        disabled={!loop && (disableNextButton || currentIndex === size)}
+                    >
+                        <Text
+                            style={
+                                {
+                                    textAlign: 'center',
+                                    fontSize: 20,
+                                    color: 'white',
+                                    ...buttonTextStyle
+                                }
+                            }
+                        >
+                            {buttonRightText ?? 'NEXT'}
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+            )}
         </View>
     );
 };
